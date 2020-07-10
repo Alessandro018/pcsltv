@@ -8,10 +8,10 @@
 	<div class="login">
 		<form  action="">
 			<h2>Acessar sua conta</h2>
-			<label >Login</label>
-			<input type="text" name="login">
-			<label >Senha</label>
-			<input type="password" name="senha">
+			<label>Login</label>
+			<input type="text" name="login" required>
+			<label>Senha</label>
+			<input type="password" name="senha" required>
 			<button>Entrar</button>
 		</form>
 

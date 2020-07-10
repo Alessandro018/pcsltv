@@ -13,7 +13,6 @@
 		<div class="status">
 			<label for="">Welcome Alessandro!</label>
 		</div>
-		<div class="main"></div>
 	</div>
 	<link rel="stylesheet" href="../../css/style.css"/>
 </body>
