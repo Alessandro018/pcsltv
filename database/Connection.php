@@ -7,10 +7,10 @@
         private $connection;
 
         public function __construct() {
-            $this->host = "";
+            $this->host = "localhost";
             $this->user = "";
             $this->password = "";
-            $this->database = "";
+            $this->database = "pcsltv";
             
             $this->connection = new PDO("mysql: host=$this->host; dbname=$this->database", $this->user, $this->password);
         }
