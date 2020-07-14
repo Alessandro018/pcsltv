@@ -41,8 +41,9 @@ div.container div.login {
 }
 div.content {
 	position: absolute;
-	width: 86%;
+	width: 85.8%;
 	top: 90px;
+	height: 85%;
 	float: right;
 	right: 0;
 }
@@ -61,16 +62,19 @@ div.login form {
 	align-items: center;
 }
 div.main {
-	margin: 30px auto;
-	width: 60%;
+	margin: 22px auto auto auto;
+	width: 50%;
+	height: 95%;
+	max-width: 580px;
+	max-height: 490px;
 	text-align: center;
 }
 div.main form.cad-cli {
 	border-radius: 4px;
 	background-color: #EFF2F3;
-	width: 80%;
+	width: 90%;
 	height: 100%;
-	margin: auto;
+	margin: 0 auto;
 }
 div.list-users {
 	margin: 30px auto 0;
@@ -106,7 +110,6 @@ div.row a {
 div.row a:hover {
 	background-color: rgb(105, 171, 233);
 }
-
 div.list-users div.row label {
 	float: left;
 	left: 0;
@@ -116,7 +119,6 @@ div.list-users div.row label {
 td {
 	padding: 10px;
 }
-
 form  label {
 	display: inline-block;
 }
@@ -129,8 +131,7 @@ div.row:after {
 	float: left;
 	width: 25%;
 	margin-top: 19px;
-}
-  
+}  
 .col-75 {
 	float: left;
 	width: 75%;
@@ -147,7 +148,7 @@ form button {
 	width: 80%;
 	height: 39px;
 	cursor: pointer;
-	margin: 40px;
+	margin-top: 30px;
 	border-radius: 20px;
 	border: none;
 	background-color: #239FD5;
@@ -161,6 +162,15 @@ form input:focus {
 	border: 1px solid rgb(105, 171, 233);
 	outline: none;
 }
-form button:hover{
+form button:hover {
 	background-color: rgb(105, 171, 233);
+}
+input.red {
+	border: solid 1px red;
+}
+input.red:focus {
+	border: solid 1px red;
+}
+span.blue {
+	color: blue;
 }
