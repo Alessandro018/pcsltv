@@ -20,7 +20,6 @@ div.sidenav {
 div.sidenav a {
 	margin: 20px;
 	text-decoration: none;
-	color: #4245ED;
 }
 div.status {
 	height: 90px;
@@ -173,4 +172,7 @@ input.red:focus {
 }
 span.blue {
 	color: blue;
+}
+a{
+	color: #4245ED;
 }

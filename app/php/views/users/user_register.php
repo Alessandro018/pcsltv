@@ -1,3 +1,9 @@
+<?php 
+session_start();
+if(!isset($_SESSION["userId"])){
+	header('location: ../../../../index.php');
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,7 +17,7 @@
 			<a href="">Fornecedores</a>
 		</div>
 		<div class="status">
-			<label for="">Welcome Alessandro!</label>
+			<label for="">Welcome <?=$_SESSION["userLogin"];?>! | <a href="../../controller/users/logout.php">Sair</a></label>
         </div>
         <div class="content">
             <div class="main">
@@ -22,7 +28,7 @@
                             <label for="">Nome</label>
                         </div>
                         <div class="col-75">
-                            <input type="text" name="name" placeholder="max 20" maxlength="40" required >
+                            <input type="text" name="name" minlength="5" placeholder="max 40" maxlength="40" required >
                         </div>
                     </div>
                     <div class="row">
@@ -30,7 +36,7 @@
                             <label for="cpf">CPF</label>
                         </div>
                         <div class="col-75">
-                            <input type="text" id="cpf" name="cpf" placeholder="max 20" maxlength="20" required >
+                            <input type="text" id="cpf" name="cpf" minlength="11" placeholder="min 11 | max 11" maxlength="11" required >
                         </div>
                     </div>
                     <div class="row">
@@ -46,7 +52,7 @@
                             <label for="">Sexo</label>
                         </div>
                         <div class="col-75">
-                            <input type="text" name="gender" placeholder="max 20" maxlength="20" required >
+                            <input type="text" name="gender" minlength="5" placeholder="max 20" maxlength="20" required >
                         </div>
                     </div>
                     <div class="row">
@@ -54,7 +60,7 @@
                             <label for="">Telefone</label>
                         </div>
                         <div class="col-75">
-                            <input type="text" name="telephone" placeholder="max 20" maxlength="20" required >
+                            <input type="text" name="telephone" minlength="9" placeholder="max 20" maxlength="20" required >
                         </div>
                     </div>
                     <div class="row">
@@ -62,7 +68,7 @@
                             <label for="">Login</label>
                         </div>
                         <div class="col-75">
-                            <input type="text" name="login" placeholder="max 20" maxlength="20" required >
+                            <input type="text" name="login" minlength="5" placeholder="min 5 | max 20" maxlength="20" required >
                         </div>
                     </div>
                     <div class="row">

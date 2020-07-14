@@ -8,7 +8,7 @@
     $gender = addslashes($_POST["gender"]);
     $date_of_birth = addslashes($_POST["date_of_birth"]);
     $telephone = addslashes($_POST["telephone"]);
-    $password = addslashes($_POST["password"]);
+    $password = password_hash(addslashes($_POST["password"]), PASSWORD_DEFAULT);
 
     //verifica se o cpf já existe no banco de dados
     $query = User::exists("cpf", $cpf);
