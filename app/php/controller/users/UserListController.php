@@ -6,7 +6,8 @@
 
         public function usersList() {
             $data = new Connection();
-            $stmt = $data->fetchAll("SELECT * FROM Users WHERE admin!=? ORDER BY id DESC ", [1]);
+            //busca todos os usuários que não são admin, colocando os mais recentes em primeiro
+            $stmt = $data->fetchAll("SELECT * FROM Users WHERE id!=? ORDER BY id DESC ", [$_SESSION["userId"]]);
             return $stmt;
         }
     }

@@ -75,6 +75,14 @@ div.main form.cad-cli {
 	height: 100%;
 	margin: 0 auto;
 }
+div.main form.update-pw {
+	padding-top: 40px;
+	margin-top: 40px;
+	border-radius: 4px;
+	background-color: #EFF2F3;
+	width: 90%;
+	height: 70%;
+}
 div.list-users {
 	margin: 30px auto 0;
 	width: 60%;
@@ -95,6 +103,13 @@ div.list-users table {
 	padding-top: 15px;
 	border-top: #babaca solid 1px;
 }
+td {
+	max-width: 100px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
 div.row a {
 	float: right;
 	right: 0;
@@ -129,7 +144,7 @@ div.row:after {
 .col-25 {
 	float: left;
 	width: 25%;
-	margin-top: 19px;
+	margin-top: 14px;
 }  
 .col-75 {
 	float: left;

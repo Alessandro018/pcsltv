@@ -8,6 +8,7 @@ if(!isset($_SESSION["userId"])){
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
+	<title>Lista de clientes</title>
 </head>
 <body>
 	<div class="container">
@@ -17,7 +18,7 @@ if(!isset($_SESSION["userId"])){
 			<a href="">Fornecedores</a>
 		</div>
 		<div class="status">
-			<label for="">Welcome <?=$_SESSION["userLogin"];?>! | <a href="../../controller/users/logout.php">Sair</a></label>
+			<label for="">Olá <?=$_SESSION["userLogin"];?>! | <a href="../../controller/users/logout.php">Sair</a></label>
 		</div>
 		<div class="content">
 			<div class="list-users">
@@ -26,17 +27,17 @@ if(!isset($_SESSION["userId"])){
 					<a href="user_register.php">Cadastrar</a>
 				</div>
 				<div class="row">
-					<?php if(isset($_SESSION['user_created'])): ?>
-						<span class="blue">Cliente cadastrado com sucesso</span>
-					<?php endif; unset($_SESSION['user_created']);?>
+					<?php if(isset($_SESSION['msg'])): ?>
+						<span class="blue"><?=$_SESSION['msg'];?></span>
+					<?php endif; unset($_SESSION['msg']);?>
 				</div>
 				<table>
 					<?php foreach(UserListController::usersList() as $user) : ?>
 						<tr>
 							<td><?= $user["name"];?></td>
 							<td><a href="">Ver</a></td>
-							<td><a href="">Editar</a></td>
-							<td><a href="">Excluir</a></td>
+							<td><a href="user_edit.php?user=<?=sha1($user['id']);?>">Editar</a></td>
+							<td><a href="../../controller/users/UserDelController.php?user=<?=sha1($user['id']);?>">Excluir</a></td>
 						</tr>
 					<?php endforeach; ?>
 				</table>

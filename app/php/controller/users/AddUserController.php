@@ -1,6 +1,9 @@
 <?php
     session_start();
     include("../../model/User.php");
+    if(!isset($_SESSION["userId"])){
+        header("location: ../../../../index.php");
+    }
 
     $name = addslashes($_POST["name"]);
     $login = addslashes($_POST["login"]);
@@ -35,5 +38,5 @@
         $password
     );
     User::save($user);
-    $_SESSION['user_created']=true;
+    $_SESSION['msg']="Cliente criado com sucesso";
 ?>

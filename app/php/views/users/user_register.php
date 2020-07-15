@@ -7,7 +7,8 @@ if(!isset($_SESSION["userId"])){
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
+    <meta charset="UTF-8">
+    <title>Cadastro de cliente</title>
 </head>
 <body>
 	<div class="container">

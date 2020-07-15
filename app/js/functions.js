@@ -45,7 +45,33 @@ $(document).ready(function(){
                         alert("Senha incorreta");
                         break;
                     default:
-                        window.location.href="app/php/views/users/user_list.php";
+                        window.location.href="app/php/views/dashboard.php";
+                        break;
+                }
+			}
+		});
+    });
+    $("#user-edit").submit(function(e){
+        e.preventDefault();
+        $("input").removeClass("red");
+        var dados = $(this).serialize();
+		$.ajax({
+			url: "../../controller/users/UserEditController.php",
+            type: "POST",
+			data: dados,
+			success: function(response){
+                switch (response) {
+                    case "senha atual incorreta":
+					    $("input[name=password]").addClass("red");
+                        alert(response);
+                        break;
+                    case "senhas não correspondem":
+					    $("input[name=newpassword1]").addClass("red");
+					    $("input[name=newpassword2]").addClass("red");
+                        alert(response);
+                        break;
+                    default:
+                        window.location.href="user_list.php";
                         break;
                 }
 			}

@@ -25,12 +25,7 @@
             $con->query("INSERT INTO Users SET name=?, login=?, cpf=?, gender=?, date_of_birth=?, telephone=?, password=?",
              [$user->name, $user->login, $user->cpf, $user->gender, $user->date_of_birth, $user->telephone, $user->password]);
         }
-        //Busca no banco de dados um usuário específico
-        public function findOne($column, $param) {
-            $con = new Connection();
-            $con->query("SELECT * FROM Users WHERE $column=?", [$param]);
-            return $con;
-        }
+        
         //Verifica se já existe o valor "X" em tal coluna no banco de dados (está sendo usada para verificar o login e cpf)
         public function exists($column, $param) {
             $con = new Connection();

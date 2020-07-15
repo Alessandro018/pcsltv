@@ -3,7 +3,6 @@
     include("../../../../database/Connection.php");
     if(!isset($_SESSION["userId"])){
         header("location: ../../../../index.php");
-        return;
     }
     $id = addslashes($_GET["user"]);
     $con = new Connection();

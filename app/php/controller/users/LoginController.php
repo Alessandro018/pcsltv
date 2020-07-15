@@ -11,6 +11,7 @@
     //Verifica se encontrou o login passado pelo usuário no banco de dados(retorna a quantidade de linhas encontrada)
     if($stmt->rowCount() > 0) {
         $user = $stmt->fetch();
+        //verifica se a senha em texto plano não é diferente da senha que recebeu o hash
         if (!password_verify($password, $user["password"]) ){
             echo "senha incorreta";
             return;
@@ -22,6 +23,7 @@
             return;
         }
     }
+    //se não encontrou nenhuma linha, o usuário não existe no banco de dados
     if($stmt->rowCount() < 1) {
         echo "login não existe";
         return;
